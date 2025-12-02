@@ -21,6 +21,7 @@ struct intList
 
 struct intList *primeSieve(int n);
 
+void freeIntList(struct intList *l);
 
 int pqFormGroups(int n);
 
