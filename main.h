@@ -1,4 +1,3 @@
-
 #ifndef _MAIN_H_
 #define _MAIN_H_
 
@@ -15,12 +14,13 @@
 
 struct intList
 {
-	int len;
-	int *list;
+        int len;
+        int *list;
 };
 
 struct intList *primeSieve(int n);
 
+void freeIntList(struct intList *l);
 
 int pqFormGroups(int n);
 
