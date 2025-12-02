@@ -20,8 +20,10 @@ An equivalent process can be taken to determine the uniqueness of $q-\text{Sylow
 ## Implementation
 Given a $m$ max-cardinality.
 
-  1. Erasthotenes prime sieve is applied to a max bound of $\left\lceil\dfrac{m}{2}\right\rceil$
-  2. A double loop is used over $p$ and $q$ ensuring that once $pq$ is evaluated, $qp$ is later ignored.
+  1. Erasthotenes prime sieve is applied to a max bound of $\left\lceil\dfrac{m}{2}\right\rceil$.
+     The sieve is scanned to retrieve primes.
+     
+  3. A double loop is used over $p$ and $q$ ensuring that once $pq$ is evaluated, $qp$ is later ignored.
      Negating simpleness of the group if $p \not\equiv 1 \pmod{q}$ or $q \not\equiv 1 \pmod{p}$. 
 
 ## Flags
@@ -32,4 +34,4 @@ LATEXFLAG = 1
 VALGRIND = 1
 ```
 
-can be toggled, to deactivate latex output (and change to CVS output of the format $pq, p, q, p \text{or } q$, with the last field depending on whether the found Sylow subgroup is a $p$ or a $q$ Sylow. And to deactivate the `-g` flag used in GCC for valgrind.
+can be toggled, to deactivate latex output (and change to CVS output of the format $pq, p, q, p \text{ or } q$, with the last field depending on whether the found Sylow subgroup is a $p$ or a $q$ Sylow. And to deactivate the `-g` flag used in GCC for valgrind.
