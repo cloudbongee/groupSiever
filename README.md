@@ -24,7 +24,7 @@ If we give an ordering $q < p$, if we look for the $q-\text{Sylow}$ group, then 
 ## Implementation
 Given a $m$ max-cardinality.
 
-  1. Erasthotenes prime sieve is applied to a max bound of $\left\lceil\dfrac{m}{2}\right\rceil$.
+  1. Eratosthenes prime sieve is applied to a max bound of $\left\lceil\dfrac{m}{2}\right\rceil$.
      The sieve is scanned to retrieve primes.
      
   3. A double loop is used over $p$ and $q$ ensuring that once $pq$ is evaluated, $qp$ is later ignored.
