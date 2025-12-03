@@ -6,7 +6,7 @@ FILENAMES = $(addprefix $(SRCDIR), $(NAMES))
 OBFILES = $(addsuffix .o,$(FILENAMES))
 SRCFILES = $(addsuffix .c, $(FILENAMES))
 
-LATEXFLAG = 1
+LATEXFLAG = 0
 VALGRIND = 1
 
 ifeq ($(LATEXFLAG), 1)

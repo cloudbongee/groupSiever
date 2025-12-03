@@ -109,24 +109,20 @@ int pqFormGroups(int n)
 	for(int i = 0; i < primes->len; i++)
 	{
 		
-		int p;
-		// pq starts as p(1)
-		int pq = p = list[i];
-
-
-		int start = 0;
+		int p = list[i];
 		/*
 		 * all of the pq combinations starting p(2)
 		 * will most certainly include p^2
-		 */
-		for(int j = start; pq <= n && j < primes->len; j++)
+		 */ 
+		
+
+		for(int j = i+1; p * list[j] <= n && j < primes->len; ++j)
 		{
-			int simple = 1;
 
 			int q = list[j];
-			
-			// printf("q: %d\n", q);		
-			pq = p * q;
+			int pq = p * q;
+
+			int simple = 1;
 			if(p != q)
 			{
 				
@@ -167,12 +163,6 @@ int pqFormGroups(int n)
 		}
 		
 
-		 
-
-		// start is used to declare the initialization of the pq loop.
-		// It scans the same array as a grid upper triangularly
-		// in order to avoid the repetitions gathered from commutation
-		start++;
 	}
 		
 	//
