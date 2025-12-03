@@ -1,6 +1,8 @@
 # groupSiever
 
-GroupSiever was made to aid myself with finding and counting for me the non-simple groups $2 < |G| < 168$. 
+GroupSiever was made to aid myself with finding and counting for me the non-simple groups $2 \leq |G| \leq 168$.
+
+It is still in progress. And the software itself doesn't really have much practical use given you can undermine most computation through lemmas in any practical group theory scenario.
 
 ## Groups of order $pq$
 
