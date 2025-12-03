@@ -1,10 +1,5 @@
 CC = gcc
-FLAGS = -Wall -lm
-SRCDIR = ./
-NAMES = main
-FILENAMES = $(addprefix $(SRCDIR), $(NAMES))
-OBFILES = $(addsuffix .o,$(FILENAMES))
-SRCFILES = $(addsuffix .c, $(FILENAMES))
+FLAGS = -Wall
 
 LATEXFLAG = 0
 VALGRIND = 1
@@ -17,8 +12,14 @@ ifeq ($(VALGRIND), 1)
 	FLAGS += -g
 endif
 
-pqSieve: main.c main.h
-	$(CC) $(FLAGS) main.c -o pqSieve
+pqSieve: pqSieve.c pqSieve.h eratosthenes.o
+	$(CC) $(FLAGS) eratosthenes.o $@.c -o pqSieve -lm
+
+pkSieve: pkSieve.c pkSieve.h eratosthenes.o
+	$(CC) $(FLAGS) eratosthenes.o $@.c -o pkSieve -lm
+
+eratosthenes.o: eratosthenes.c eratosthenes.h
+	$(CC) $(FLAGS) -c $(*F).c
 
 .PHONY clean:
 	rm -f $(OBFILES)
