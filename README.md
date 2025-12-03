@@ -1,6 +1,8 @@
-# pqSimpleGroupSiever
+# groupSiever
 
-## Theory
+## Simple groups of order $pq$
+
+### Theory
 Given a group $\vert G\vert = p^km$, due to the consequence of Sylow's theorem, $n_p:=[G:N(p)]$ follows 
 the property $n_p \mid m \land n_p \equiv 1 \pmod{p}$. One of the easiest type of groups to look into
 are the ones of order $pq$.
@@ -17,11 +19,11 @@ However, if it is not true, then the count of $1$ is the only valid count for $p
 
 An equivalent process can be taken to determine the uniqueness of $q-\text{Sylow}$ subgroups. And since $p < pq$ and $q < pq$. Following the aforementioned logical process over all combinations of $p\neq q$ with $pq$ lesser than a given bound will let us confirm simpleness (or the lack thereof) of groups of $pq$ order.
 
-## Proof
+### Proof
 
 If we give an ordering $q < p$, if we look for the $q-\text{Sylow}$ group, then $q\not\equiv 1\pmod{p}$ is granted.
 
-## Implementation
+### Implementation
 Given a $m$ max-cardinality.
 
   1. Eratosthenes prime sieve is applied to a max bound of $\left\lceil\dfrac{m}{2}\right\rceil$.
@@ -29,6 +31,9 @@ Given a $m$ max-cardinality.
      
   3. A double loop is used over $p$ and $q$ ensuring that once $pq$ is evaluated, $qp$ is later ignored.
      Negating simpleness of the group if $p \not\equiv 1 \pmod{q}$ or $q \not\equiv 1 \pmod{p}$. 
+
+## Simple groups of order $p^k$
+
 
 ## Flags
 In the makefile, the variables
