@@ -1,8 +1,8 @@
 # groupSiever
 
-GroupSiever was made to aid myself with finding and counting for me the non-simple groups $2 \leq |G| \leq 168$.
+GroupSiever was made to aid myself with finding and counting for me the non-simple groups of non prime $2 \leq |G| \leq 168$.
 
-It is still in progress. And the software itself doesn't really have much practical use given you can undermine most computation through lemmas in any practical group theory scenario.
+Made with a smile.
 
 ## Non simplicity of groups order $pq$
 
@@ -70,7 +70,13 @@ See [pkSieve.c](pkSieve.c)
 ## Groups under general sylow non-simplicity test
 
 
-## Non simplicity of groups $2n, n \in \mathbb{Z}^{\text{odd}}$
+## Non simplicity of groups $2n, n \in \mathbb{Z}^{\text{odd}}, n > 1$
+
+### Proof
+See [Cayley's theorem] below. 
+
+## Lemmas
+### Cayley's theorem
 
 ## Flags
 In the makefile, the variables
