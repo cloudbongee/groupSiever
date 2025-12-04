@@ -45,7 +45,7 @@ int nSieve(int n)
 				// if it went through all possible divisors and none is equiv to 1 mod p
 				if(flag == 0)
 				{
-					printf("%d\n", groupSize);
+					printf("> %d\n", groupSize);
 				}
 			}
 			

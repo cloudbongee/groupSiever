@@ -13,7 +13,7 @@ int pkSieve(int n)
 		int p = primes->list[i];
 		for(int u = p*p; u <= n; u*=p)
 		{
-			printf("%d\n", u);
+			printf("> %d\n", u);
 			count++;
 		}
 	}
