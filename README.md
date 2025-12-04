@@ -90,7 +90,7 @@ See [Cayley's theorem] below.
 
 ## The rest of the entries
 
-If $G$ is finite, and $H<G$ has $\vert G \vert \nmid  \vert G : H \vert $, then $\exists K \leq H : \\{e\\} \neq K \trianglelefteq G$.
+If $G$ is finite, and $H<G$ has $\vert G \vert \nmid  \vert G : H \vert $, then $\exists K \leq H : \\{e\\} \neq K \triangleleft G$.
 
 Check [remaining.c](remaining.c) to see how the remaining groups were extracted from the concatenation of the results of `pqSieve.c`, `nSieve.c`, and `pkSieve.c`.
 
@@ -101,7 +101,7 @@ non simplicity:
   2. For each $a$ as specified, we check if $\hspace{0.2ex}\dfrac{|G|}{a}! \equiv 0 \pmod{|G|}$.
      If that doesn't happen, then $a$ is listed as a possible subgroup size that would prove existence of a normal group in $G$
      
-Utilizing [indexSieveBruteForce.c](indexSieveBruteForce.c) we get a list, where the format is "Group size, Possible group size that would normalize":
+Utilizing [indexSieveBruteForce.c](indexSieveBruteForce.c) we get a list, where the format is `|G|, Possible |H| that would normalize`:
 
 ```
 12, 4
@@ -185,6 +185,11 @@ Utilizing [indexSieveBruteForce.c](indexSieveBruteForce.c) we get a list, where 
 160, 40
 160, 80
 ```
+
+For all the even numbers $|G|$ above, the pattern is the consistent possible subgroup size $\dfrac{|G|}{2}$. Notice that $|D_n|= 2n$, and notice that $\text{Rot}(D_n) = \\{R_{0}, R_{360/2}, \dots, R_{360/(n)}\\}\leq D_n$ has 
+$\text{Rot}(D_n) = n$. The rotations are closed under composition, and every rotation has an inverse, and the identity; therefore we have found a group and a subgroup pair of the form $(2n, n)$ that satisfies the condition for non normality for every even $|G|$.
+
+Leaving only 105.
 
 ## Make
 As any good chef, I leave my recipes open to the world.
