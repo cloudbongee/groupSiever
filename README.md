@@ -1,6 +1,6 @@
 # groupSiever
 
-GroupSiever was made to aid myself with finding and counting for me the non-simple groups of non prime $2 \leq |G| \leq 168$.
+GroupSiever was made to aid myself with finding and counting for me the non-simple groups of non prime $2 \leq |G| < 168$.
 
 Made with a smile.
 
@@ -36,7 +36,11 @@ Given a $m$ max-cardinality.
   3. A double loop is used over $p$ and $q$ ensuring that once $pq$ is evaluated, $qp$ is later ignored.
      Negating simpleness of the group if $p \not\equiv 1 \pmod{q}$ or $q \not\equiv 1 \pmod{p}$. 
 
-See [pqSieve.c](pqSieve.c)
+See [pqSieve.c](pqSieve.c) with usage
+
+```
+pqSieve [maxGroupSize]
+```
 
 ## Non-simplicity of groups order $p^k$
 
@@ -65,7 +69,11 @@ Therefore $Z(G)$ cannot have an order of one, otherwise it's not divisible by $p
 
 Simply lists all group sizes of order $p^k \leq n$ for a given $n$. Not much magic going on.
 
-See [pkSieve.c](pkSieve.c)
+See [pkSieve.c](pkSieve.c) with usage
+
+```
+pkSieve [maxGroupSize]
+```
 
 ## Groups under general sylow non-simplicity test
 
