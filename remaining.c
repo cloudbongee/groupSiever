@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
 	int n  = atoi(argv[1]);
 	if(n <= 2)
 	{
-		fprintf(stderr, "Invalud Max-group-size\n");
+		fprintf(stderr, "Invalid Max-group-size\n");
 		return 1;
 	}
 
