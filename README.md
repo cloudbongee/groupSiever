@@ -4,7 +4,7 @@ GroupSiever was made to aid myself with finding and counting for me the non-simp
 
 It is still in progress. And the software itself doesn't really have much practical use given you can undermine most computation through lemmas in any practical group theory scenario.
 
-## Groups of order $pq$
+## Non simplicity of groups order $pq$
 
 ### Theory
 Given a group $\vert G\vert = p^km$, due to the consequence of Sylow's theorem, $n_p:=[G:N(p)]$ follows 
@@ -36,8 +36,41 @@ Given a $m$ max-cardinality.
   3. A double loop is used over $p$ and $q$ ensuring that once $pq$ is evaluated, $qp$ is later ignored.
      Negating simpleness of the group if $p \not\equiv 1 \pmod{q}$ or $q \not\equiv 1 \pmod{p}$. 
 
-## Simple groups of order $p^k$
+See [pqSieve.c](pqSieve.c)
 
+## Non-simplicity of groups order $p^k$
+
+### Theory
+
+Let $|G| = p^k$, such that $k\geq 2$, then $Z(G) \neq \{e\}$
+
+### Proof
+
+As a consequence of Lagrange's theorem, we know that $\vert G:C(a) \vert \mid p^k$ for any $a\in G$. It should be a prime power we call $p^r$. 
+
+Using the class equation
+
+$$\vert G \vert = \vert Z(G) \vert + \sum\limits_{a \in G-Z(G)}\vert G:C(a)\vert$$
+$$\vert G \vert -  \sum\limits_{a \in G-Z(G)}\vert G:C(a)\vert = \vert Z(G) \vert$$
+
+If we assume assume $p^r = p^k$ then $\vert Z(G) \vert = 0$, which is impossible. Since the number $p^r$ is a divisor, it must be lesser than $p^k$.
+
+Furthermore
+
+$$ p^k - p^r = p^h(p^{k-h} - p^{r-h}) = |Z(G)| \implies p \mid |Z(G)|$$
+
+Therefore $Z(G)$ cannot have an order of one, otherwise it's not divisible by $p$. Thus, it's nontrivial.
+
+### Implementation
+
+Simply lists all group sizes of order $p^k \leq n$ for a given $n$. Not much magic going on.
+
+See [pkSieve.c](pkSieve.c)
+
+## Groups under general sylow non-simplicity test
+
+
+## Non simplicity of groups $2n, n \in \mathbb{Z}^{\text{odd}}$
 
 ## Flags
 In the makefile, the variables
