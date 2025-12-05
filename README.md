@@ -77,6 +77,14 @@ pkSieve [maxGroupSize]
 
 ## Groups under general sylow non-simplicity test
 
+$|G| \text{ is not prime }, p \mid n$, $|G|$ is not simple if $\forall x \in \mathbb{N}: x \mid |G| \land x \equiv 1 \pmod{p} \implies x = 1$ 
+
+### Proof
+
+There are two cases for $|G|$
+
+  1. $|G| = p^k$, then the theorem above applies.
+  2. $|G| = p^km$, then $\text{Syl}_p(G) < G$ (strictly), $[G:N(p)] \mid m \land [G:N(p)] \equiv 1 \pmod{p}$
 
 ## Non simplicity of groups $2n, n \in \mathbb{Z}^{\text{odd}}, n > 1$
 
@@ -90,7 +98,7 @@ See [Cayley's theorem] below.
 
 ## The rest of the entries
 
-If $G$ is finite, and $H<G$ has $\vert G \vert \nmid  \vert G : H \vert $, then $\exists K \leq H : \\{e\\} \neq K \triangleleft G$.
+If $G$ is finite, and $H<G$ has $\vert G \vert \nmid  |G : H|! $, then $\exists K \leq H : \\{e\\} \neq K \triangleleft G$.
 
 Check [remaining.c](remaining.c) to see how the remaining groups were extracted from the concatenation of the results of `pqSieve.c`, `nSieve.c`, and `pkSieve.c`.
 
