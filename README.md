@@ -507,7 +507,13 @@ This leaves only 72, 112, 120, and 144 now.
 
 If $|G|=72=2^3 \cdot 3^2$, $1\equiv n_3 \pmod{3} \land n_3 \mid 8$. Only $4,1$ are valid, and accepting $4$ would imply a homomorphic $G$ to $S_4$, where if trivial, the isomorphism formed is invalid due to the distinct cardinalities, and if the homomorphism were trivial (or the kernel is total), then the Sylow groups would also be normal, but accepting an index $4$ implies they should not be normal. Hence there is a contradiction. 
 
-If $|G| = 2^4 \cdot 7= 112$, by embedding theorem we have that there is an isomorphism to a subgroup of $A_7$, however $112\nmid 7!/2$, therefore it can't be equivalent to a subgroup of $A_7$
+If $|G| = 2^4 \cdot 7= 112$, by embedding theorem we have that there is an isomorphism to a subgroup of $A_7$, however $112\nmid 7!/2$, therefore it can't be equivalent to a subgroup of $A_7$. That is a contradiction.
+
+If $120 = 2^3\cdot 3\cdot5 $, we let the index of sylow-5 groups be 6. Due to our contradiction assumption of non simpleness, then the group is embedded in $S_6$, but $S_5$ has the same cardinality as $G$, there is an isomorphism $G$ to $S_5$ by conjugation. $S_5$ has the normal subgroup $A_5$. 
+
+If $144 = 2^4\cdot 3^2$, would lead us to an embedding (from the index of the 3 sylow) to $S_4$, but $S_4$ is order 24. Way lesser than the group it contains. Therefore there is a contradiction.
+
+This finishes all proofs :).
 
 ## Make
 As any good chef, I leave my recipes open to the world.
