@@ -194,7 +194,7 @@ Utilizing [indexSieveBruteForce.c](indexSieveBruteForce.c) we get a list, where 
 160, 80
 ```
 
-Utilizing the index theorem, through the selection of maximal $p-$Sylow subgroups, as specified in [indexSieveSylow.c](indexSieveSylow.c), we get
+Utilizing the index theorem, through the selection of maximal $p-\text{Sylow}$ subgroups, as specified in [indexSieveSylow.c](indexSieveSylow.c), we get
 
 ```
 12 is nonsimple with max sylow group order 4
