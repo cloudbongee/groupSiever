@@ -96,9 +96,9 @@ See [Cayley's theorem] below.
 ## Lemmas
 ### Cayley's theorem
 
-## The rest of the entries
+## Index theorem using Sylow subgroups
 
-If $G$ is finite, and $H<G$ has $\vert G \vert \nmid  |G : H|! $, then $\exists K \leq H : \\{e\\} \neq K \triangleleft G$.
+If $G$ is finite, and $H<G$ has $\vert G \vert \nmid  |G : H|! $, then $\exists K \leq H : \\{e\\} \neq K \triangleleft G$ (Index theorem).
 
 Check [remaining.c](remaining.c) to see how the remaining groups were extracted from the concatenation of the results of `pqSieve.c`, `nSieve.c`, and `pkSieve.c`.
 
@@ -194,10 +194,28 @@ Utilizing [indexSieveBruteForce.c](indexSieveBruteForce.c) we get a list, where 
 160, 80
 ```
 
-For all the even numbers $|G|$ above, the pattern is the consistent possible subgroup size $\dfrac{|G|}{2}$. Notice that $|D_n|= 2n$, and notice that $\text{Rot}(D_n) = \\{R_{0}, R_{360/2}, \dots, R_{360/(n)}\\}\leq D_n$ has 
-$\text{Rot}(D_n) = n$. The rotations are closed under composition, and every rotation has an inverse, and the identity; therefore we have found a group and a subgroup pair of the form $(2n, n)$ that satisfies the condition for non normality for every even $|G|$.
+Utilizing the index theorem, through the selection of maximal $p-$Sylow subgroups, as specified in [indexSieveSylow.c](indexSieveSylow.c), we get
 
-Leaving only 105.
+```
+12 is nonsimple with max sylow group order 4
+24 is nonsimple with max sylow group order 8
+36 is nonsimple with max sylow group order 9
+48 is nonsimple with max sylow group order 16
+56 is non-conclusive
+60 is non-conclusive
+72 is non-conclusive
+80 is nonsimple with max sylow group order 16
+96 is nonsimple with max sylow group order 32
+105 is non-conclusive
+108 is nonsimple with max sylow group order 27
+112 is non-conclusive
+120 is non-conclusive
+132 is non-conclusive
+144 is non-conclusive
+160 is nonsimple with max sylow group order 32
+```
+
+Which leaves 56,60,72,105,112,120,132,144. 
 
 ## Make
 As any good chef, I leave my recipes open to the world.
