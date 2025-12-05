@@ -25,6 +25,7 @@ all:
 	make nSieve
 	make indexSieve
 	make indexSieveBruteForce
+	make indexSieveSylow
 	make twoOddSieve
 	make remaining
 	make remainingList
@@ -51,6 +52,9 @@ indexSieve: indexSieve.c indexSieve.h
 
 indexSieveBruteForce: indexSieveBruteForce.c indexSieveBruteForce.h
 	$(CC) $(FLAGS) indexSieveBruteForce.c -o indexSieveBruteForce -lm
+
+indexSieveSylow: indexSieveSylow.c indexSieveSylow.h eratosthenes.o
+	$(CC) $(FLAGS) eratosthenes.o indexSieveSylow.c -o indexSieveSylow -lm
 
 twoOddSieve: twoOddSieve.c twoOddSieve.h
 	$(CC) $(FLAGS) twoOddSieve.c -o twoOddSieve

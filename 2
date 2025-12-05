@@ -1,0 +1,80 @@
+
+#include "indexSieveSylow.h"
+
+int fact(int n)
+{
+	if(n == 1)
+	{
+		return n;
+	}
+
+	return n * fact(n-1);
+}
+
+void indexSieveSylow(int G)
+{
+
+	struct intList *primes = eratosthenes(ceil(G/2));
+	int maxSylow = -1;
+
+	int p;
+	for(int i = 0; i < primes->len; i++)
+	{
+
+		if(G%(p=primes->list[i])==0)
+		{
+			int sylow;
+			int pow =p;
+
+			// while the power divides the group order
+			while(G%pow==0)
+			{
+				sylow = pow;
+				pow*=p;
+			}
+
+			if(sylow>=maxSylow)
+			{
+				maxSylow = sylow;
+			}
+		}
+	}
+
+	if(maxSylow <= 0)
+	{
+		fprintf(stderr, "Error finding prime\n");
+		exit(1);
+	}
+
+	int index = (int)G/maxSylow;
+
+	if(fact(index)%G != 0)
+	{
+		printf("%d is nonsimple\n");
+	}
+}
+
+int main(int argc, char *argv[])
+{
+	if(argc!=2)
+	{
+		fprintf(stderr ,"Usage: indexSieve [G-size]\n");
+		return 1;
+	}
+
+	int G = atoi(argv[1]);
+
+
+	if(G <= 2)
+	{
+		fprintf(stderr, "Incorrect arguments, too small \n");
+		return 1;
+	}
+
+	for(int i = 3; i <= G; i++)
+	{
+		indexSieveSylow(i);
+	}
+	
+	return 0;
+}
