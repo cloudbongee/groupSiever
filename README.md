@@ -1,7 +1,7 @@
 # groupSiever
 
 GroupSiever was made to find and prove non-simplicity for some of the groups: $2 \leq |G| \leq 59$, $61 \leq |G| < 168$.
-Made with a smile.
+Made with a smile, for abstract algebra.
 
 ## Non simplicity of groups order $pq$
 
